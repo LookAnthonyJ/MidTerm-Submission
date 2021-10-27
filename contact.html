@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exams</title>
+  <link rel="stylesheet" href="contact.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+</head>
+
+<body>
+  <div class="HEADERCONTAINER">
+    <div class="HEADER">
+      <img src="header.jpg" style="width: 100%; height: 50%" />
+    </div>
+  </div>
+  <div class="MAINCONTAINER">
+    <div class="LEFTMENU">
+      <ul class="ulNAV">
+        <li><a href="exams.html">Home</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="MAINCONTENT">
+      <form class="FORMCONTACT">
+        <label>Surname:</label> <br />
+        <input class="INPUT" type="text" name="studentSurname" placeholder="Surname" />
+        <br />
+        <br />
+        <label>Name:</label> <br />
+        <input class="INPUT" type="text" name="studentName" placeholder="Name" />
+        <br />
+        <br />
+        <label>Student ID:</label> <br />
+        <input class="INPUT" type="number" name="studentId" placeholder="Student ID" />
+        <br />
+        <br />
+        <label>E - Mail:</label> <br />
+        <input class="INPUT" type="email" name="email" placeholder="E - Mail" />
+        <br />
+        <br />
+        <label>Note</label> <br />
+        <textarea class="INPUT2" name="note" placeholder="Please leave a note!"></textarea>
+        <br />
+        <br />
+        <button type="submit" class="SAVEBTN">Save</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    const DB = [];
+    $(document).load(() => {
+        $(".FORMCONTACT").validate();
+        $(".SAVEBTN").click(function () {
+        let person = {
+          studentName,
+          studentSurname,
+          studentId,
+          note
+        }
+        console.log(person);
+        var x = $("form").serializeArray();
+        $.each(x, function (i, field) {
+          if (field.name == "studentName") person.studentName = field.value
+          else if (field.name == "studentSurname") person.studentSurname = field.value
+          else if (field.name == "studentId") person.studentId = field.value
+          else person.note = field.value
+        });
+        console.log(person);
+        DB.push(JSON.stringify(person));
+      });
+    });
+    
+  </script>
+</body>
+
+
+</html>

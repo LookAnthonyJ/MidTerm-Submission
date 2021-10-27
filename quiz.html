@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz</title>
+  <link rel="stylesheet" href="quiz.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <script src="quiz.js"></script>
+  <div class="HEADERCONTAINER">
+    <div class="HEADER">
+      <img src="header.jpg" style="width: 100%; height: 50%" />
+    </div>
+  </div>
+  <div class="MAINCONTAINER">
+    <div class="LEFTMENU">
+      <ul class="ulNAV">
+        <li><a href="exams.html">Home</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="MAINCONTENT">
+
+      <body>
+
+        <table style="width:1500px">
+          <tr>
+            <td>
+              <div>
+                <p>1. Enter your Information.</p>
+
+                <ul>
+                  <input type="text" name="Name" placeholder="Name">
+                  <br>
+                  <input type="text" name="ID" placeholder="ID">
+              </div>
+            </td>
+            <td>
+              <div>
+                <p class="question">2. Inside which HTML element do we put the JavaScript (choose one)</p>
+
+                <ul>
+                  <input class="answer" type="radio" name="q2" value="1">
+                  <label id="correctString1">&lt;script&gt;</label>
+                  <br>
+                  <input class="answer" type="radio" name="q2" value="0">
+                  <label>&lt;js&gt;</label>
+                  <br>
+                  <input class="answer" type="radio" name="q2" value="0">
+                  <label>&lt;scripting&gt;</label>
+                  <br>
+                  <input class="answer" type="radio" name="q2" value="0">
+                  <label>&lt;javascript&gt;</label>
+                </ul>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p class="question">3. The external JavaScript file must contain the &lt;script&gt; tag (check all that
+                  apply)</p>
+
+                <ul>
+                  <input class="answer" type="radio" name="q3" value="0">
+                  <label>True</label>
+                  <br>
+                  <input class="answer" type="radio" name="q3" value="1">
+                  <label id="correctString2">False</label>
+                  <br>
+                  <input class="answer" type="radio" name="q3" value="0">
+                  <label>None</label>
+                  <br>
+                  <input class="answer" type="radio" name="q2" value="0">
+                  <label>Both</label>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <p class="question">4. How do you write "Hello World" in an alert box?</p>
+
+                <ul>
+                  <input class="answer" type="radio" name="q4" value="0">
+                  <label>alertBox("Hello World!")</label>
+                  <br>
+                  <input class="answer" type="radio" name="q4" value="1">
+                  <label id="correctString3">alert("Hello World!")</label>
+                  <br>
+                  <input class="answer" type="radio" name="q4" value="0">
+                  <label>msg("Hello World!")r</label>
+                  <br>
+                  <input class="answer" type="radio" name="q4" value="0">
+                  <label>msgBox("Hello World!")</label>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <br />
+        <div class="submitter">
+          <input class="quizSubmit" id="submitButton" onClick="submitQuiz()" type="submit" value="Submit" />
+        </div>
+
+        <div class="quizAnswers" id="correctAnswer1"></div>
+        <div class="quizAnswers" id="correctAnswer2"></div>
+        <div class="quizAnswers" id="correctAnswer3"></div>
+        <div class="quizAnswers" id="correctAnswer4"></div>
+
+        <div>
+          <h2 class="quizScore" id="userScore"></h2>
+        </div>
+    </div>
+
+</body>
+</div>
+</div>
+<script>
+  var startTime, endTime;
+
+  // Start counting
+  function start() {
+    startTime = performance.now;
+  };
+
+  // Ends counting
+  function end() {
+    endTime = performance.now;
+    var timeDiff = endTime - startTime;
+    timeDiff /= 1000;
+
+    var seconds = Math.round(timeDiff);
+    window.alert(seconds + " seconds");
+  }
+
+  $(document).ready(function () {
+    start;
+  });
+
+  $("#submitButton").click(end);
+</script>
+</body>
+
+</html>
